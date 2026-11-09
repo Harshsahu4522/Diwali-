@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali Wishes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #ffcc00;
+            font-size: 28px;
+            text-shadow: 0 0 10px #ff6600;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 2px solid #ffcc00;
+            border-radius: 5px;
+            background: #222;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        .wish-screen {
+            display: none;
+        }
+        .diwali-title {
+            font-size: 32px;
+            color: #ff3300;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff0000; }
+            to { text-shadow: 0 0 20px #ffff00, 0 0 30px #ff6600; }
+        }
+        .from-name {
+            font-size: 24px;
+            color: #00ffcc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Step 1: Name Input Screen -->
+    <div class="container" id="inputScreen">
+        <h1>✨ दीपावली की शुभकामनाएँ ✨</h1>
+        <p>अपना नाम दर्ज करें:</p>
+        <input type="text" id="userName" placeholder="यहाँ अपना नाम लिखें...">
+        <br>
+        <button onclick="showWishes()">देखें विश</button>
+    </div>
+
+    <!-- Step 2: Animation & Greeting Screen -->
+    <div class="container wish-screen" id="wishScreen">
+        <h1 class="diwali-title">🪔 Happy Diwali 🪔</h1>
+        <p style="font-size: 18px; line-height: 1.6;">आपके और आपके परिवार के जीवन में सुख, समृद्धि और प्रकाश आए!</p>
+        <div class="from-name" id="displayName"></div>
+    </div>
+
+    <script>
+        function showWishes() {
+            const name = document.getElementById('userName').value.trim();
+            if(name === "") {
+                alert("भाई, कृपया अपना नाम तो लिख!");
+                return;
+            }
+            document.getElementById('inputScreen').style.display = 'none';
+            document.getElementById('wishScreen').style.display = 'block';
+            document.getElementById('displayName').innerText = "की तरफ से ढेर सारी शुभकामनाएँ! 🎆";
+        }
+    </script>
+</body>
+</html>
